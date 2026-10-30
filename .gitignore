@@ -1,0 +1,5 @@
+# macOS folder files
+.DS_Store
+
+# Editor settings (personal, not part of the site)
+.vscode/

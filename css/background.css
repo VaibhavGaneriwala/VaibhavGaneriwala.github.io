@@ -1,0 +1,82 @@
+.bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    background: var(--deep);
+}
+
+.bg .flow {
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(
+        from 0deg at 50% 50%,
+        var(--sky), var(--sky2), var(--mid), var(--deep), var(--navy), var(--edge), var(--mid), var(--sky2), var(--sky)
+    );
+    filter: blur(70px);
+    opacity: 0.9;
+    animation: spin 28s linear infinite;
+    will-change: transform;
+}
+
+.bg i {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.55;
+    will-change: transform;
+}
+
+.bg i:nth-child(2) {
+    width: 50vw;
+    height: 50vw;
+    left: -10vw;
+    top: -10vh;
+    background: var(--sky2);
+    animation: drift1 11s ease-in-out infinite alternate;
+}
+
+.bg i:nth-child(3) {
+    width: 45vw;
+    height: 45vw;
+    right: -10vw;
+    top: 30vh;
+    background: var(--blob2);
+    animation: drift2 14s ease-in-out infinite alternate;
+}
+
+.bg i:nth-child(4) {
+    width: 40vw;
+    height: 40vw;
+    left: 30vw;
+    bottom: -15vh;
+    background: var(--deep);
+    opacity: 0.8;
+    animation: drift3 17s ease-in-out infinite alternate;
+}
+
+.bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 45%, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6));
+}
+
+@keyframes spin {
+    to {transform: rotate(360deg);}
+}
+
+@keyframes drift1 {
+    to {transform: translate(35vw, 30vh) scale(1.2);}
+}
+
+@keyframes drift2 {
+    to {transform: translate(-40vw, -20vh) scale(0.85);}
+}
+
+@keyframes drift3 {
+    to {transform: translate(-25vw, -40vh) scale(1.15);}
+}

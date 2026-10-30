@@ -1,0 +1,75 @@
+#contact {
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: clamp(36px, 6vw, 72px);
+    margin-bottom: 16px;
+}
+
+#contact > p {
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.details {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 12px;
+    max-width: 760px;
+    margin: 40px auto 0;
+    text-align: left;
+}
+
+.detail {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: 100%;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: var(--glass);
+    border: 1px solid var(--glass-b);
+    color: var(--ink);
+    text-decoration: none;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+a.detail:hover {
+    border-color: rgba(167, 139, 250, 0.5);
+    transform: translateY(-2px);
+}
+
+.detail .ci {
+    width: 44px;
+    height: 44px;
+    flex: none;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: rgba(167, 139, 250, 0.14);
+    color: var(--sky2);
+}
+
+.detail .ci svg {
+    width: 22px;
+    height: 22px;
+}
+
+.detail span:last-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.detail small {
+    display: block;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+#contact .ctas {
+    margin-top: 36px;
+}

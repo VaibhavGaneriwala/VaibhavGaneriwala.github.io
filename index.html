@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaibhav Ganeriwala — Software Engineer</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500&display=swap">
+    
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/entry.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/achievements.css">
+    <link rel="stylesheet" href="css/stack.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/motion-toggle.css">
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Gradient Background -->
+    <div class="bg" aria-hidden="true">
+        <div class="flow"></div>
+        <i></i><i></i><i></i>
+    </div>
+
+    <!-- Navbar -->
+    <header class="notch" id="notch">
+        <a class="brand" href="#top" aria-label="Vaibhav Ganeriwala, back to top">
+            <span class="short" aria-hidden="true">VG</span>
+            <span class="full" aria-hidden="true">Vaibhav Ganeriwala</span>
+        </a>
+        <span class="cam" aria-hidden="true"></span>
+        <nav id="menu" aria-label="Main">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#stack">Stack</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="head-right">
+            <a class="resume" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/>
+                    <path d="M14 3v5h5M9 13h6M9 17h6"/>
+                </svg>
+                <span class="label">Resume</span>
+                <span class="sr-only">(PDF, opens in a new tab)</span>
+            </a>
+
+            <button class="menu-btn" type="button" aria-label="Menu" aria-expanded="false" aria-controls="menu">
+                <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M4 7h16M4 12h16M4 17h16"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero (Top) -->
+    <div class="hero" id="top">
+        <div>
+            <h1>Vaibhav Ganeriwala</h1>
+            <p class="type">
+                <span class="sr-only" id="roles-sr">I'm a Software Engineer</span>
+                <span id="typed" aria-hidden="true">I'm a Software Engineer</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            <div class="ctas">
+                <a class="btn solid" href="#projects">View My Work</a>
+                <a class="btn ghost" href="#contact">Get In Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main -->
+    <main id="main" tabindex="-1">
+        <div data-component="About"></div>
+        <div data-component="Experience"></div>
+        <div data-component="Projects"></div>
+        <div data-component="Education"></div>
+        <div data-component="Achievements"></div>
+        <div data-component="Stack"></div>
+        <div data-component="Contact"></div>
+    </main>
+    <div data-component="Footer"></div>
+    <div data-component="MotionToggle"></div>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+.timeline {
+    border-left: 1px solid var(--glass-b);
+    padding-left: 32px;
+    display: grid;
+    gap: 40px;
+}
+
+.job {
+    position: relative;
+}
+
+.job::before{
+    content: "";
+    position: absolute;
+    left: -37px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--sky2);
+    box-shadow: 0 0 0 5px rgba(167, 139, 250, 0.18);
+}
+
+.job summary,
+.job .summary {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4px 20px;
+    align-items: start;
+}
+
+.job summary {
+    list-style: none;
+    cursor: pointer;
+}
+
+.job summary::-webkit-details-marker{
+    display: none;
+}
+
+.job .when {
+    color: var(--sky2);
+    font-size: 14px;
+}
+
+.job .role {
+    font-family: Questrial, Inter, sans-serif;
+    font-size: 22px;
+}
+
+.job .org {
+    color: var(--ink);
+}
+
+.job .loc {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.job .toggle {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid var(--glass-b);
+    display: grid;
+    place-items: center;
+    color: var(--muted);
+    transition: transform 0.3s, color 0.2s, border-color 0.2s;
+}
+
+.job summary:hover .toggle {
+    color: #fff;
+    border-color: rgba(167, 139, 250, 0.5);
+}
+
+.job[open] .toggle{
+    transform: rotate(180deg);
+}
+
+.job ul {
+    margin: 14px 0 0 18px;
+    max-width: 720px;
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+}
+
+.job ul b {
+    color: var(--ink);
+    font-weight: 500;
+}
+
+.job .when,
+.job .role,
+.job .org,
+.job .loc {
+    grid-column: 1;
+}
+
+.edu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 18px;
+}
+
+.edu .job {
+    padding: 26px 28px;
+    border-radius: 20px;
+    background: var(--glass);
+    border: 1px solid var(--glass-b);
+}
+
+.edu .job::before {
+    display: none;
+}
+
+@media (max-width: 860px) {
+    .edu .job {
+        padding: 22px 20px;
+    }
+}

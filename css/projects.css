@@ -1,0 +1,132 @@
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -16px 0 28px;
+}
+
+.filters button {
+    font: inherit;
+    font-size: 14px;
+    padding: 8px 18px;
+    border-radius: 99px;
+    border: 1px solid var(--glass-b);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filters button:hover {
+    color: #fff;
+}
+
+.filters button[aria-pressed="true"] {
+    background: #fff;
+    color: var(--btn-ink);
+    border-color: #fff;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(160deg, rgba(167, 139, 250, 0.1), rgba(255, 255, 255, 0.03) 50%);
+    border: 1px solid var(--glass-b);
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(167, 139, 250, 0.45);
+}
+
+.card[hidden] {
+    display: none;
+}
+
+.media {
+    position: relative;
+    margin: -30px -30px 22px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135 deg, rgba(167, 139, 250, 0.25), rgba(0, 0, 0, 0.4));
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.media img,
+.media video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 99px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+}
+
+.card .meta {
+    color: var(--sky2);
+    font-size: 13px;
+    letter-spacing: 0.04em;
+}
+
+.card h3 {
+    font-size: 26px;
+    margin: 12px 0 8px;
+}
+
+.card .impact {
+    color: var(--ink);
+    margin-top: 12px;
+}
+
+.card .impact b {
+    color: #5ef0a6;
+    font-weight: 500;
+}
+
+.plinks {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    gap: 18px;
+    font-size: 14px;
+}
+
+.plinks a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.plinks a:hover {
+    border-color: #fff;
+}
+
+@media (max-width: 860px) {
+    .projects {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,239 @@
+.notch {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 40;
+    width: 210px;
+    height: 34px;
+    padding: 0 14px 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #000;
+    border-radius: 0 0 18px 18px;
+    transition: width 0.7s var(--spring), height 0.7s var(--spring), border-radius 0.7s var(--spring), padding 0.7s var(--spring), box-shadow 0.5s;
+}
+
+.notch::before,
+.notch::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 12px;
+    height: 12px;
+}
+
+.notch::before {
+    left: -12px;
+    background: radial-gradient(circle at 0 100%, transparent 11.5px, #000 12px);
+}
+
+.notch::after {
+    right: -12px;
+    background: radial-gradient(circle at 100% 100%, transparent 11.5px, #000 12px);
+}
+
+.brand {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-decoration: none;
+    font-family: Questrial, Inter, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.brand .short {
+    max-width: 40px;
+    overflow: hidden;
+    transition: opacity 0.2s, max-width 0.7s var(--spring);
+}
+
+.brand .full {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.7s var(--spring), opacity 0.3s;
+}
+
+.cam {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    margin: -4.5px 0 0 -4.5px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 35%, #2b3a55, #0a0d14 60%);
+    box-shadow: 0 0 0 1.5px #151515;
+    transition: opacity 0.25s;
+}
+
+.notch nav {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.25s, visibility 0s 0.25s;
+}
+
+.notch nav a {
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-family: Questrial, Inter, sans-serif;
+    font-size: 15px;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+
+.notch nav a:hover,
+.notch nav a.active {
+    color: #fff;
+}
+
+.head-right {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.resume {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 4px;
+    border-radius: 99px;
+    color: #fff;
+    text-decoration: none;
+    font-family: Questrial, Inter, sans-serif;
+    font-size: 15px;
+    transition: background 0.4s, color 0.4s, padding 0.7s var(--spring), gap 0.7s var(--spring);
+}
+
+.resume svg {
+    width: 15px;
+    height: 15px;
+    flex: none;
+}
+
+.resume .label {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: max-width 0.7s var(--spring), opacity 0.3s;
+}
+
+.menu-btn {
+    display: none;
+    width: 36px;
+    height: 36px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    place-items: center;
+}
+
+.menu-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.notch.expanded {
+    width: min(1040px, calc(100% - 32px));
+    height: 60px;
+    padding: 0 10px 0 26px;
+    border-radius: 0 0 30px 30px;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45), inset 0 -1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.notch.expanded .brand .short {
+    max-width: 0;
+    opacity: 0;
+}
+
+.notch.expanded .brand .full {
+    max-width: 220px;
+    opacity: 1;
+    transition-delay: 0s, 0.2s;
+}
+
+.notch.expanded .cam {
+    opacity: 0;
+}
+
+.notch.expanded nav {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.35s 0.25s, visibility 0s;
+}
+
+.notch.expanded .resume {
+    background: #fff;
+    color: var(--btn-ink);
+    padding: 9px 18px;
+    gap: 8px;
+}
+
+.notch.expanded .resume .label {
+    max-width: 80px;
+    opacity: 1;
+    transition-delay: 0s, 0.2s;
+}
+
+@media (max-width: 860px) {
+    .notch.expanded {
+        width: calc(100% - 24px);
+        padding: 0 8px 0 22px;
+    }
+
+    .notch.expanded nav {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .notch.expanded .menu-btn {
+        display: grid;
+    }
+
+    .notch.expanded .resume {
+        padding: 8px 14px;
+    }
+
+    .notch.open nav {
+        opacity: 1;
+        visibility: visible;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        transform: none;
+        flex-direction: column;
+        gap: 0;
+        padding: 10px;
+        border-radius: 24px;
+        background: #000;
+        border: 1px solid var(--glass-b);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .notch nav a {
+        padding: 14px 18px;
+        border-radius: 14px;
+    }
+
+    .notch nav a:hover {
+        background: rgba(255, 255, 255, 0.06);
+    }
+}

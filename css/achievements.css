@@ -1,0 +1,36 @@
+.awards {
+    list-style: none;
+}
+
+.award {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 22px 0;
+    border-bottom: 1px solid var(--glass-b);
+}
+
+.award:first-child {
+    border-top: 1px solid var(--glass-b);
+}
+
+.award h3 {
+    font-size: 20px;
+}
+
+.award p {
+    font-size: 15px;
+}
+
+.award .when {
+    color: var(--sky2);
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+@media (max-width: 860px) {
+    .award {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
