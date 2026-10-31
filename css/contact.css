@@ -57,7 +57,7 @@ a.detail:hover {
     height: 22px;
 }
 
-.detail span:last-child {
+.detail .ci + span {
     min-width: 0;
     overflow-wrap: anywhere;
 }
